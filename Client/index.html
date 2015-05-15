@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head >
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/breeze-client/build/breeze.debug.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/breeze-client/build/adapters/breeze.bridge.angular.js"></script>
+    
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+</head>
+<body ng-controller="HomeController as home">
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 ng-show="!results">Loading...</h1>        
+                </div>
+            </div>
+            <div class="row">
+            
+                <div class="col-sm-4">
+                    <div class="new_item" ng-show="results">
+                        <h2>Novo item:</h2>
+                        <form ng-submit="saveNew(newTodo)">
+                            <input type="text" ng-model="newTodo.Description" placeholder="Novo item aqui">
+                            <span>(Enter para inserir)</span>
+                        </form>
+            
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="list_items" ng-show="results">
+                        <h2>Lista de items</h2>
+                        <div ng-repeat="todo in results">
+                            <form ng-submit="update()">
+                                <span class="listItem" ng-class="{redBorder : todo.saved == false, newItem : todo.createdNow == true}" ng-hide="todo.editing" ng-dblclick="editItem(todo)">{{todo.Description}}</span>
+                                <input ng-show="todo.editing" ng-blur="doneEditing(todo)" ng-model="todo.Description" autofocus />
+                            </form>
+                        </div>
+                        <hr>
+                        <button ng-click="update(todo)">Alterar items</button>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="app/app.js"></script>
+
+</body>
+</html>

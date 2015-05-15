@@ -1,0 +1,74 @@
+body
+{
+    font-size: 13px;
+    font-family: sans-serif;
+}
+
+.listItem.redBorder
+{
+    border: 1px solid #faa;
+    position: relative;
+}
+
+.listItem.redBorder:after,.listItem.newItem:before
+{
+    float: right;
+    margin: -10px -10px -10px 10px;
+    padding: 10px;
+}
+        
+.listItem.redBorder:after
+{
+    content: 'Não gravado!';
+    background: rgba(255,0,0,0.5);
+}
+.listItem.newItem:before
+{
+    content: 'Novo Item!';
+    background: rgba(0,255,0,0.5);
+}
+
+.listItem.newItem
+{
+    background: #efe;
+    border: 1px solid #999;
+    position: relative;
+}
+.new_item input
+{
+    padding: 10px;
+}
+
+.new_item, .list_items
+{
+
+    box-shadow: 0 0 2px #aaa inset;
+    padding: 0.1em 1em 1em 1em;
+    background: #f8f8f8;
+}
+ul
+{
+    margin: 1em;
+    padding: 0;
+}
+ul li 
+{
+    list-style-type: none;
+    display: block;
+
+
+}
+
+.listItem, .listItem + input
+{
+    background: #f0f0f0;
+    border: 1px solid #aaa;
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+}
+.listItem + input
+{
+    background: white;
+}

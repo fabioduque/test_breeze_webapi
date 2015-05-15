@@ -1,2 +1,2 @@
-# test_breeze_webapi
-Basic todo list with MS WebAPI and Breeze+AngularJs
+# Test Breeze + Angular with WebAPI for backend
+This is just a basic todo list to test Breeze + Angular. Web API 2 is used as backend.

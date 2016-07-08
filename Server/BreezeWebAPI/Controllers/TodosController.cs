@@ -12,8 +12,6 @@ using System.Web.Http.Cors;
 namespace BreezeWebAPI.Controllers
 {
 
-
-    [EnableCors( origins: "*", headers: "*", methods: "*" )]
     [BreezeController]
     public class TodosController : ApiController
     {
